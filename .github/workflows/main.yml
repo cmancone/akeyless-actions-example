@@ -3,6 +3,9 @@ on: [push]
 jobs:
   fetch_static_secrets:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     name: Fetch some static secrets
     steps:
       - name: Fetch static secrets from AKeyless
