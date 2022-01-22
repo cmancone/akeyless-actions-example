@@ -1,0 +1,16 @@
+on: [push]
+
+jobs:
+  fetch_static_secrets:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - name: Hello world action step
+        id: fetch-static-secrets
+        uses: cmancone/akeyless-action
+        with:
+          access-id: p-jiu4ebrbyalq
+          static-secrets:
+            /MyFirstSecret: 'my_first_secret'
+      - name: Output your secret (obviously you shouldn't really do that)
+        run: echo "Your secret is: ${{ steps.fetch-static-secrets.outputs.my_first_secret }}"
