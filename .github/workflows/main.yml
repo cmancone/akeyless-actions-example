@@ -10,7 +10,6 @@ jobs:
         uses: cmancone/akeyless-action@main
         with:
           access-id: p-jiu4ebrbyalq
-          static-secrets:
-            /MyFirstSecret: 'my_first_secret'
+          static-secrets: '{"/MyFirstSecret":"my_first_secret"}'
       - name: Output your secret
         run: echo "Your secret is ${{ steps.fetch-static-secrets.outputs.my_first_secret }}"
