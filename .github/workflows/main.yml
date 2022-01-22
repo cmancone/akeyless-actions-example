@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: fetch-static-secrets
-        uses: cmancone/akeyless-action
+        uses: cmancone/akeyless-action@main
         with:
           access-id: p-jiu4ebrbyalq
           static-secrets:
