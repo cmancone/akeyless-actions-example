@@ -3,13 +3,15 @@ on: [push]
 jobs:
   fetch_static_secrets:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Fetch some static secrets
     steps:
-      - name: Hello world action step
+      - name: Fetch static secrets from AKeyless
         id: fetch-static-secrets
         uses: cmancone/akeyless-action@main
         with:
           access-id: p-jiu4ebrbyalq
           static-secrets: '{"/MyFirstSecret":"my_first_secret"}'
+          export-secrets-to-outputs: true
+          export-secrets-to-environment: true
       - name: Output your secret
         run: echo "Your secret is ${{ steps.fetch-static-secrets.outputs.my_first_secret }}"
