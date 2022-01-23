@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Fetch static secrets from AKeyless
         id: fetch-static-secrets
-        uses: cmancone/akeyless-action@main
+        uses: cmancone/akeyless-action@v1.0.0
         with:
           access-id: p-jiu4ebrbyalq
           static-secrets: '{"/MyFirstSecret":"my_first_secret"}'
